@@ -1,6 +1,6 @@
 # Add a module directory in case we need to find some packages
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH}
-    "${CMAKE_SOURCE_DIR}/src/cmake/Modules/")
+    "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Modules/")
 
 # Add some useful macros for examples and unit testing
 include(Optizelle)
