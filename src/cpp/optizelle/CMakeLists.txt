@@ -29,10 +29,11 @@ add_library(optizelle_shared SHARED
     $<TARGET_OBJECTS:utility>
     $<TARGET_OBJECTS:optizelle_cpp>)
 set_target_properties(optizelle_shared PROPERTIES OUTPUT_NAME optizelle)
-target_link_libraries(optizelle_shared
+target_link_libraries(optizelle_shared PUBLIC
     ${JSONCPP_LIBRARIES}
     ${LAPACK_LIBRARIES}
     ${BLAS_LIBRARIES})
+target_include_directories(optizelle_shared PUBLIC ${JSONCPP_INCLUDE_DIRS})
 if(APPLE)
     set_target_properties(optizelle_shared PROPERTIES INSTALL_RPATH "@loader_path/../share/optizelle/thirdparty/lib")
 elseif(UNIX)
